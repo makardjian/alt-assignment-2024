@@ -1,10 +1,10 @@
-import React from 'react';
-import { CircularProgress, Alert, AlertTitle } from '@mui/material';
-import { makeStyles } from '@mui/styles';
-import MovieSearchResult from '../MovieSearchResult/MovieSearchResult';
-import NoMovieResults from './NoMovieResults';
-import type { MovieSearchResult as MovieSearchResultType } from '../MovieSearchResult/MovieSearchResult.type';
-import { API_ERROR_MESSAGE } from './ApiError.constants';
+import React from "react";
+import { CircularProgress, Alert, AlertTitle } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import MovieSearchResult from "../MovieSearchResult/MovieSearchResult";
+import NoMovieResults from "./NoMovieResults";
+import type { MovieSearchResult as MovieSearchResultType } from "../MovieSearchResult/MovieSearchResult.type";
+import { API_ERROR_MESSAGE } from "./ApiError.constants";
 
 type MovieSearchResultsProps = {
   movies: MovieSearchResultType[];
@@ -15,12 +15,12 @@ type MovieSearchResultsProps = {
 
 const useStyles = makeStyles({
   alertContainer: {
-    marginTop: '20px',
-    display: 'flex',
-    justifyContent: 'center',
+    marginTop: "20px",
+    display: "flex",
+    justifyContent: "center",
   },
   alertMessage: {
-    width: '75%',
+    width: "75%",
   },
 });
 
@@ -39,7 +39,7 @@ const MovieSearchResults = ({
         <NoMovieResults />
       ) : showSearchError ? (
         <div className={classes.alertContainer}>
-          <Alert className={classes.alertMessage} severity='error'>
+          <Alert className={classes.alertMessage} severity="error">
             <AlertTitle>Error</AlertTitle>
             {API_ERROR_MESSAGE}
           </Alert>

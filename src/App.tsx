@@ -1,44 +1,41 @@
-import React, { useState } from 'react';
-import ReactPaginate from 'react-paginate';
-import { Typography } from '@mui/material';
-import { MovieDetailsContext } from './context/MovieDetailsContext';
-import MovieSearchBar from './components/MovieSearchBar';
-import MovieSearchResults from './components/MovieSearchResults/MovieSearchResults';
-import MovieDetails from './components/MovieDetails/MovieDetails';
-import useStyles from './App.styles';
-import { useSearchResults } from './hooks/useSearchResults';
-import { useMovieDetails } from './hooks/useMovieDetails';
+import React, { useState } from "react";
+import ReactPaginate from "react-paginate";
+import { Typography } from "@mui/material";
+import { MovieDetailsContext } from "./context/MovieDetailsContext";
+import MovieSearchBar from "./components/MovieSearchBar";
+import MovieSearchResults from "./components/MovieSearchResults/MovieSearchResults";
+import MovieDetails from "./components/MovieDetails/MovieDetails";
+import useStyles from "./App.styles";
+import { useSearchResults } from "./hooks/useSearchResults";
+import { useMovieDetails } from "./hooks/useMovieDetails";
 
 const App = () => {
   const classes = useStyles();
 
-  // COMMON 
+  // COMMON
   const [showNoResultsMessage, setShowNoResultsMessage] = useState(false);
   const [searchError, setSearchError] = useState(false);
-  const [shouldFetchSearchResults, setShouldFetchSearchResults] = useState(false);
 
   // USER INPUT
-  const [inputValue, setInputValue] = useState('');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [inputValue, setInputValue] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   // MOVIE DETAILS
-  const [movieDetailsId, setMovieDetailsId] = useState('');
+  const [movieDetailsId, setMovieDetailsId] = useState("");
   const [showMovieDetails, setShowMovieDetails] = useState(false);
 
   // PAGINATION
   const [currentPage, setCurrentPage] = useState(1);
 
-  const {
-    searchDataIsLoading,
-    searchResults,
-    pageCount
-  } = useSearchResults({searchQuery, currentPage, shouldFetchSearchResults, setShowNoResultsMessage, setSearchError});
+  const { searchDataIsLoading, searchResults, pageCount } = useSearchResults({
+    searchQuery,
+    currentPage,
+    setShowNoResultsMessage,
+    setSearchError,
+  });
 
-
-  const {
-    movieDetails,
-    detailsDataIsLoading
-  } = useMovieDetails(movieDetailsId);
+  const { movieDetails, detailsDataIsLoading } =
+    useMovieDetails(movieDetailsId);
 
   const onInputChange = (newValue: string) => {
     setInputValue(newValue);
@@ -49,7 +46,6 @@ const App = () => {
   const onSearch = () => {
     setCurrentPage(1);
     setSearchQuery(inputValue);
-    setShouldFetchSearchResults(true);
   };
 
   const onToggleMovieDetails = () => {
@@ -62,13 +58,11 @@ const App = () => {
 
   const onPageChange = ({ selected }: { selected: number }) => {
     setCurrentPage(selected + 1);
-    setShouldFetchSearchResults(true);
   };
-
 
   return (
     <div className={classes.root}>
-      <Typography variant='h4' className={classes.header}>
+      <Typography variant="h4" className={classes.header}>
         Cinema Center
       </Typography>
       <div className={classes.contentContainer}>
@@ -103,9 +97,9 @@ const App = () => {
               onPageChange={onPageChange}
               containerClassName={classes.paginationContainer}
               activeClassName={classes.pageIsActive}
-              previousLabel='&larr;'
-              nextLabel='&rarr;'
-              breakLabel='...'
+              previousLabel="&larr;"
+              nextLabel="&rarr;"
+              breakLabel="..."
             />
           ) : null}
         </div>

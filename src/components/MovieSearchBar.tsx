@@ -1,6 +1,6 @@
-import React, { KeyboardEvent } from 'react';
-import { TextField, Button } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import React, { KeyboardEvent } from "react";
+import { TextField, Button } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 type MovieSearchBarProps = {
   value: string;
@@ -10,9 +10,9 @@ type MovieSearchBarProps = {
 
 const useStyles = makeStyles({
   container: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   searchBar: {
     padding: 5,
@@ -28,7 +28,7 @@ const MovieSearchBar = ({
   const classes = useStyles();
 
   const onKeyPress = (event: KeyboardEvent) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       onSearch();
     }
   };
@@ -37,18 +37,18 @@ const MovieSearchBar = ({
     <div className={classes.container}>
       <div className={classes.searchBar}>
         <TextField
-          id='outlined-basic'
-          label='Search for a movie!'
-          variant='outlined'
-          autoComplete='off'
-          size='small'
+          id="outlined-basic"
+          label="Search for a movie!"
+          variant="outlined"
+          autoComplete="off"
+          size="small"
           fullWidth
           value={value}
           onChange={(e) => onInputChange(e.target.value)}
           onKeyPress={(e) => onKeyPress(e)}
         />
       </div>
-      <Button variant='contained' size='medium' onClick={onSearch}>
+      <Button variant="contained" size="medium" onClick={onSearch}>
         Search
       </Button>
     </div>

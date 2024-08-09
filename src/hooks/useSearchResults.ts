@@ -1,10 +1,15 @@
-import { useState, useCallback, useEffect } from 'react';
-import { UseSearchResults } from './types/UseSearchResults.type'
+import { useState, useCallback, useEffect } from "react";
+import { UseSearchResults } from "./types/UseSearchResults.type";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const RESULTS_PER_PAGE = 10;
 
-export const useSearchResults = ({searchQuery, currentPage, shouldFetchSearchResults, setShowNoResultsMessage, setSearchError }: UseSearchResults) => {
+export const useSearchResults = ({
+  searchQuery,
+  currentPage,
+  setShowNoResultsMessage,
+  setSearchError,
+}: UseSearchResults) => {
   const [searchDataIsLoading, setSearchDataIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const [pageCount, setPageCount] = useState(0);
@@ -34,15 +39,14 @@ export const useSearchResults = ({searchQuery, currentPage, shouldFetchSearchRes
   }, [searchQuery, currentPage, setSearchError, setShowNoResultsMessage]);
 
   useEffect(() => {
-    if (shouldFetchSearchResults && searchQuery.length) {
+    if (searchQuery.length) {
       fetchApiSearchResults();
     }
-  }, [shouldFetchSearchResults, searchQuery, fetchApiSearchResults, setShowNoResultsMessage]);
-
+  }, [searchQuery, fetchApiSearchResults, setShowNoResultsMessage]);
 
   return {
     searchDataIsLoading,
     searchResults,
-    pageCount
+    pageCount,
   };
 };
