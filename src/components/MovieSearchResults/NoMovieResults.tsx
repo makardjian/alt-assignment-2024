@@ -1,13 +1,13 @@
-import React from "react";
-import { Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import noResultsCameraMan from "../../static/no-results-camera-man.png";
+import React from 'react';
+import { Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import noResultsCameraMan from '../../static/no-results-camera-man.png';
 
 const useStyles = makeStyles({
   image: {
-    backgroundColor: "transparent",
-    width: "50%",
-    height: "50%",
+    backgroundColor: 'transparent',
+    width: '50%',
+    height: '50%',
   },
 });
 

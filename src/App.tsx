@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import ReactPaginate from "react-paginate";
-import { Typography } from "@mui/material";
-import { MovieDetailsContext } from "./context/MovieDetailsContext";
-import MovieSearchBar from "./components/MovieSearchBar";
-import MovieSearchResults from "./components/MovieSearchResults/MovieSearchResults";
-import MovieDetails from "./components/MovieDetails/MovieDetails";
-import useStyles from "./App.styles";
-import { useSearchResults } from "./hooks/useSearchResults";
-import { useMovieDetails } from "./hooks/useMovieDetails";
+import React, { useState } from 'react';
+import ReactPaginate from 'react-paginate';
+import { Typography } from '@mui/material';
+import { MovieDetailsContext } from './context/MovieDetailsContext';
+import MovieSearchBar from './components/MovieSearchBar';
+import MovieSearchResults from './components/MovieSearchResults/MovieSearchResults';
+import MovieDetails from './components/MovieDetails/MovieDetails';
+import useStyles from './App.styles';
+import { useSearchResults } from './hooks/useSearchResults';
+import { useMovieDetails } from './hooks/useMovieDetails';
 
 const App = () => {
   const classes = useStyles();
@@ -22,13 +22,13 @@ const App = () => {
   /**
    * User input states
    */
-  const [inputValue, setInputValue] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [inputValue, setInputValue] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   /**
    * Movie details states
    */
-  const [movieDetailsId, setMovieDetailsId] = useState("");
+  const [movieDetailsId, setMovieDetailsId] = useState('');
   const [showMovieDetails, setShowMovieDetails] = useState(false);
 
   const { searchDataIsLoading, searchResults, pageCount } = useSearchResults({

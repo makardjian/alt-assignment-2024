@@ -1,20 +1,20 @@
-import { MovieDetailsType } from "./MovieDetails.type";
+import { MovieDetailsType } from './MovieDetails.type';
 
 const desiredKeys = [
-  "Actors",
-  "Awards",
-  "Country",
-  "Director",
-  "Genre",
-  "Language",
-  "Plot",
-  "Poster",
-  "Released",
-  "Runtime",
-  "Title",
-  "Year",
-  "imdbId",
-  "imdbRating",
+  'Actors',
+  'Awards',
+  'Country',
+  'Director',
+  'Genre',
+  'Language',
+  'Plot',
+  'Poster',
+  'Released',
+  'Runtime',
+  'Title',
+  'Year',
+  'imdbId',
+  'imdbRating',
 ];
 
 const desiredKeysSet = new Set(desiredKeys);

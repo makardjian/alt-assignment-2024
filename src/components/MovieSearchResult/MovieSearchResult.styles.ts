@@ -1,20 +1,20 @@
-import { makeStyles } from "@mui/styles";
-import Colors from "../../Colors";
+import { makeStyles } from '@mui/styles';
+import Colors from '../../Colors';
 
 export const sxStyles = {
   card: {
     my: 3,
-    backgroundColor: Colors["@eggshell"],
+    backgroundColor: Colors['@eggshell'],
   } as const,
   cardActionArea: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     py: 4,
   } as const,
   moviePoster: {
-    width: "150px",
-    height: "210px",
+    width: '150px',
+    height: '210px',
     borderRadius: 2,
     mr: 4,
   } as const,
@@ -22,11 +22,11 @@ export const sxStyles = {
 
 export const useStyles = makeStyles({
   titleAndYear: {
-    display: "flex",
+    display: 'flex',
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "space-between",
-    textAlign: "start",
-    margin: "0px 24px",
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    textAlign: 'start',
+    margin: '0px 24px',
   },
 });

@@ -16,8 +16,8 @@ function TestComponent({ movieId }: { movieId: string }) {
   const { movieDetails, detailsDataIsLoading } = useMovieDetails(movieId);
   return (
     <div>
-      <div data-testid='loading'>{detailsDataIsLoading.toString()}</div>
-      <div data-testid='details'>{JSON.stringify(movieDetails)}</div>
+      <div data-testid="loading">{detailsDataIsLoading.toString()}</div>
+      <div data-testid="details">{JSON.stringify(movieDetails)}</div>
     </div>
   );
 }
@@ -39,7 +39,7 @@ describe('useMovieDetails', () => {
       mockCleanMovieDetails
     );
 
-    const { getByTestId } = render(<TestComponent movieId='tt1234567' />);
+    const { getByTestId } = render(<TestComponent movieId="tt1234567" />);
 
     expect(getByTestId('loading').textContent).toBe('true');
     expect(getByTestId('details').textContent).toBe('{}');
@@ -61,7 +61,7 @@ describe('useMovieDetails', () => {
     const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation();
     (global.fetch as jest.Mock).mockRejectedValueOnce(new Error('API Error'));
 
-    const { getByTestId } = render(<TestComponent movieId='tt1234567' />);
+    const { getByTestId } = render(<TestComponent movieId="tt1234567" />);
 
     expect(getByTestId('loading').textContent).toBe('true');
 
@@ -77,7 +77,7 @@ describe('useMovieDetails', () => {
 
   it('should re-fetch when movieDetailsId changes', async () => {
     const { getByTestId, rerender } = render(
-      <TestComponent movieId='tt1234567' />
+      <TestComponent movieId="tt1234567" />
     );
 
     await waitFor(() => {
@@ -89,7 +89,7 @@ describe('useMovieDetails', () => {
       expect.stringContaining('tt1234567')
     );
 
-    rerender(<TestComponent movieId='tt7654321' />);
+    rerender(<TestComponent movieId="tt7654321" />);
 
     await waitFor(() => {
       expect(getByTestId('loading').textContent).toBe('false');
@@ -103,7 +103,7 @@ describe('useMovieDetails', () => {
 
   it('should not re-fetch when the component rerenders but the movieId does not change', async () => {
     const { getByTestId, rerender } = render(
-      <TestComponent movieId='tt1234567' />
+      <TestComponent movieId="tt1234567" />
     );
 
     await waitFor(() => {
@@ -115,7 +115,7 @@ describe('useMovieDetails', () => {
       expect.stringContaining('tt1234567')
     );
 
-    rerender(<TestComponent movieId='tt1234567' />);
+    rerender(<TestComponent movieId="tt1234567" />);
 
     await waitFor(() => {
       expect(getByTestId('loading').textContent).toBe('false');

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 import {
   Dialog,
   CircularProgress,
@@ -7,15 +7,15 @@ import {
   DialogActions,
   Divider,
   Button,
-} from "@mui/material";
-import { isMobile } from "react-device-detect";
-import WebDialogContent from "./WebDialogContent/WebDialogContent";
-import MobileDialogContent from "./MobileDialogContent/MobileDialogContent";
-import { MovieDetailsContext } from "../../context/MovieDetailsContext";
-import type { MovieDetailsType } from "./MovieDetails.type";
-import Colors from "../../Colors";
+} from '@mui/material';
+import { isMobile } from 'react-device-detect';
+import WebDialogContent from './WebDialogContent/WebDialogContent';
+import MobileDialogContent from './MobileDialogContent/MobileDialogContent';
+import { MovieDetailsContext } from '../../context/MovieDetailsContext';
+import type { MovieDetailsType } from './MovieDetails.type';
+import Colors from '../../Colors';
 
-const backgroundColor = Colors["@eggshell"];
+const backgroundColor = Colors['@eggshell'];
 
 const MovieDetails = () => {
   const {
@@ -26,7 +26,7 @@ const MovieDetails = () => {
   } = useContext(MovieDetailsContext);
 
   const keysToRenderInDescription = Object.keys(movie).filter((key) => {
-    return key !== "Poster" && key !== "Title";
+    return key !== 'Poster' && key !== 'Title';
   }) as Array<keyof MovieDetailsType>;
 
   return (
@@ -42,8 +42,8 @@ const MovieDetails = () => {
           <DialogTitle
             sx={{
               backgroundColor,
-              textAlign: "center",
-              fontSize: "30px",
+              textAlign: 'center',
+              fontSize: '30px',
             }}
           >
             {movie.Title}

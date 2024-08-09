@@ -1,5 +1,5 @@
-import { useState, useCallback, useEffect } from "react";
-import { UseSearchResults } from "./types/UseSearchResults.type";
+import { useState, useCallback, useEffect } from 'react';
+import { UseSearchResults } from './types/UseSearchResults.type';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const RESULTS_PER_PAGE = 10;
