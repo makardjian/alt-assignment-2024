@@ -39,7 +39,7 @@ const MovieSearchResults = ({
         <NoMovieResults />
       ) : showSearchError ? (
         <div className={classes.alertContainer}>
-          <Alert className={classes.alertMessage} severity='error'>
+          <Alert className={classes.alertMessage} severity="error">
             <AlertTitle>Error</AlertTitle>
             {API_ERROR_MESSAGE}
           </Alert>

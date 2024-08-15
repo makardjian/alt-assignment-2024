@@ -15,16 +15,14 @@ const WebDialogContent = ({
   return (
     <div className={classes.dialogContent}>
       <div className={classes.detailsContainer}>
-        {(keysToRenderInDescription).map(
-          (key, index) => {
-            return (
-              <div key={`${key}-${index}`}>
-                <Typography sx={sxStyles.detailsLabel}>{key}</Typography>
-                <Typography>{movie[key]}</Typography>
-              </div>
-            );
-          }
-        )}
+        {keysToRenderInDescription.map((key, index) => {
+          return (
+            <div key={`${key}-${index}`}>
+              <Typography sx={sxStyles.detailsLabel}>{key}</Typography>
+              <Typography>{movie[key]}</Typography>
+            </div>
+          );
+        })}
       </div>
       <div className={classes.posterContainer}>
         <img

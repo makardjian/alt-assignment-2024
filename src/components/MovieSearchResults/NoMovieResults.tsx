@@ -18,12 +18,12 @@ const NoMovieResults = () => {
       <img
         className={classes.image}
         src={noResultsCameraMan}
-        alt='No Results'
+        alt="No Results"
       ></img>
-      <Typography variant='h6'>
+      <Typography variant="h6">
         Oh no! We couldn't find any results for that search.
       </Typography>
-      <Typography variant='h6'>Please try again.</Typography>
+      <Typography variant="h6">Please try again.</Typography>
     </div>
   );
 };

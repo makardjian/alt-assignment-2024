@@ -37,18 +37,18 @@ const MovieSearchBar = ({
     <div className={classes.container}>
       <div className={classes.searchBar}>
         <TextField
-          id='outlined-basic'
-          label='Search for a movie!'
-          variant='outlined'
-          autoComplete='off'
-          size='small'
+          id="outlined-basic"
+          label="Search for a movie!"
+          variant="outlined"
+          autoComplete="off"
+          size="small"
           fullWidth
           value={value}
           onChange={(e) => onInputChange(e.target.value)}
           onKeyPress={(e) => onKeyPress(e)}
         />
       </div>
-      <Button variant='contained' size='medium' onClick={onSearch}>
+      <Button variant="contained" size="medium" onClick={onSearch}>
         Search
       </Button>
     </div>

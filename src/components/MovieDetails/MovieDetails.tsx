@@ -37,7 +37,7 @@ const MovieDetails = () => {
         <Dialog
           open={showMovieDetails}
           onClose={toggleMovieDetails}
-          maxWidth='md'
+          maxWidth="md"
         >
           <DialogTitle
             sx={{
@@ -48,7 +48,7 @@ const MovieDetails = () => {
           >
             {movie.Title}
           </DialogTitle>
-          <Divider variant='middle' />
+          <Divider variant="middle" />
           <DialogContent sx={{ backgroundColor }}>
             {isMobile ? (
               <MobileDialogContent
@@ -61,7 +61,7 @@ const MovieDetails = () => {
             )}
           </DialogContent>
           <DialogActions sx={{ backgroundColor }}>
-            <Button onClick={toggleMovieDetails} variant='outlined'>
+            <Button onClick={toggleMovieDetails} variant="outlined">
               Close
             </Button>
           </DialogActions>
